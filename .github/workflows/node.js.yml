@@ -27,3 +27,6 @@ jobs:
     - run: yarn install
     - run: yarn build --if-present
     - run: yarn test
+    - run: yarn start
+    - run: yarn cypress:run
+
