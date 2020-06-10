@@ -12,6 +12,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
     "test": "jest",
+    "test:e2e": "yarn start & yarn wait-on && yarn cypress:run",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --browser chrome"
   },
@@ -40,6 +41,8 @@
     "eslint-plugin-vue": "^5.2.2",
     "jest": "^24.1.0",
     "nodemon": "^1.18.9",
-    "vue-jest": "^3.0.3"
+    "npm-run-all": "^4.1.5",
+    "vue-jest": "^3.0.3",
+    "wait-on": "^5.0.1"
   }
 }
