@@ -1,6 +1,15 @@
 <template>
   <section class="container">
     <div>
+      <nav>
+        <ul style="text-align: left; display: flex;">
+          <li>
+            <nuxt-link to="/login">
+              login
+            </nuxt-link>
+          </li>
+        </ul>
+      </nav>
       <logo />
       <h1 class="title">
         cypress-on-nuxt

@@ -1,9 +1,27 @@
-/// <reference types="Cypress" />
+const port = 3000
+const baseUrl = `http://localhost:${port}`
 
 describe('My First Test', () => {
   it('visit localhost', () => {
-    cy.visit('http://localhost:3000')
+    cy.visit(baseUrl)
   })
+
+  it('link to login page', () => {
+    cy.visit(baseUrl)
+    cy.get('nav').contains('login').click()
+    cy.url().should('contain', 'login')
+  })
+
+  it('perform cookie', () => {
+    cy.visit(`${baseUrl}/login`)
+    cy.get('[data-cy="setCookie"]').click()
+    cy.get('[data-cy="getCookie"]').click()
+    cy.getCookie('value').then((val) => {
+      expect(val?.value).to.equal('hogehoge')
+    })
+    // cy.getCookies()
+  })
+
   // it('Does not do much', () => {
   //   expect(true).to.equal(true)
   // })
